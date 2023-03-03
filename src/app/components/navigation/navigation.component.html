@@ -1,0 +1,40 @@
+<mat-toolbar
+  color="accent"
+  style="display: flex; justify-content: space-between; padding: 0 64px;"
+>
+  <span>
+    <a style="text-decoration: none; color: white;" routerLink="/"
+      ><span>3Rez</span></a
+    ></span
+  >
+  <span>
+    <a
+      routerLinkActive="active-link"
+      style="text-decoration: none;"
+      routerLink="/polls"
+      ><span>Polls</span></a
+    >
+    <a
+      *ngIf="!isAuthenticated"
+      routerLinkActive="active-link"
+      style="text-decoration: none;"
+      routerLink="/login"
+      ><span style="margin-left: 24px;">Login</span></a
+    >
+    <a
+      *ngIf="isAuthenticated"
+      (click)="logout()"
+      routerLinkActive="active-link"
+      style="text-decoration: none;"
+      routerLink="/login"
+      ><span style="margin-left: 24px;">Logout</span></a
+    >
+    <a
+      *ngIf="!isAuthenticated"
+      routerLinkActive="active-link"
+      style="text-decoration: none;"
+      routerLink="/signup"
+      ><span style="margin-left: 24px;">Signup</span></a
+    >
+  </span>
+</mat-toolbar>
